@@ -1,0 +1,98 @@
+
+{% extends 'org_base.html' %}
+{% load static %}
+
+<title>{% block title %}机构课程列表页--新东方{% endblock %}</title>
+        {% block page_path %}机构课程{% endblock %}
+{% block right_form %}
+<div class="right companycenter layout" >
+		<div class="head">
+
+		</div>
+		<div class="brief group_list">
+                {% for course in all_courses %}
+                    <div class="module1_5 box">
+                        <a class="comp-img-box" href="course-detail.html">
+                            <img width="214" height="195" src="{{ MEDIA_URL }}{{ course.fav_nums }}"/>
+                        </a>
+                        <div class="des">
+                            <a href="course-detail.html"><h2>{{ course.name }}</h2></a>
+                            <span class="fl">课时：<i class="key">{{ course.learn_times }}</i></span>
+                            <span class="fr">学习人数{{ course.students }}</span>
+                        </div>
+                        <div class="bottom">
+                            <span class="fl">{{ course.course_org.name }}</span>
+                            <span class="star fr  notlogin
+                                " data-favid="13" data-fav-type="4">
+                                {{ course.students }}
+                            </span>
+                        </div>
+                    </div>
+                {% endfor %}
+
+{#                <div class="module1_5 box">#}
+{#                    <a class="comp-img-box" href="../course/course-detail.html">#}
+{##}
+{#                        <img width="214" height="195" src="{% static 'media/courses/2016/11/540e57300001d6d906000338-240-135_mvvGYHL.jpg' %}"/>#}
+{#                    </a>#}
+{#                    <div class="des">#}
+{#                        <a href="../course/course-detail.html"><h2>django实战项目</h2></a>#}
+{#                        <span class="fl">课时：<i class="key">0</i></span>#}
+{#                        <span class="fr">学习人数：0</span>#}
+{#                    </div>#}
+{#                    <div class="bottom">#}
+{#                        <span class="fl">慕课网</span>#}
+{#                         <span class="star fr  notlogin#}
+{#                            " data-favid="13" data-fav-type="4">#}
+{#                            0#}
+{#                        </span>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class="module1_5 box">#}
+{#                    <a class="comp-img-box" href="../course/course-detail.html">#}
+{##}
+{#                        <img width="214" height="195" src="{% static 'media/courses/2016/12/python错误和异常.jpg' %}"/>#}
+{#                    </a>#}
+{#                    <div class="des">#}
+{#                        <a href="../course/course-detail.html"><h2>python错误和异常</h2></a>#}
+{#                        <span class="fl">课时：<i class="key">0</i></span>#}
+{#                        <span class="fr">学习人数：0</span>#}
+{#                    </div>#}
+{#                    <div class="bottom">#}
+{#                        <span class="fl">慕课网</span>#}
+{#                         <span class="star fr  notlogin#}
+{#                            " data-favid="13" data-fav-type="4">#}
+{#                            0#}
+{#                        </span>#}
+{#                    </div>#}
+{#                </div>#}
+{##}
+{#                <div class="module1_5 box">#}
+{#                    <a class="comp-img-box" href="../course/course-detail.html">#}
+{##}
+{#                        <img width="214" height="195" src="{% static 'media/courses/2016/12/mysql.jpg' %}"/>#}
+{#                    </a>#}
+{#                    <div class="des">#}
+{#                        <a href="../course/course-detail.html"><h2>xadmin进阶开发</h2></a>#}
+{#                        <span class="fl">课时：<i class="key">30</i></span>#}
+{#                        <span class="fr">学习人数：2</span>#}
+{#                    </div>#}
+{#                    <div class="bottom">#}
+{#                        <span class="fl">慕课网</span>#}
+{#                         <span class="star fr  notlogin#}
+{#                            " data-favid="13" data-fav-type="4">#}
+{#                            1#}
+{#                        </span>#}
+{#                    </div>#}
+{#                </div>#}
+
+
+		</div>
+			<div class="pageturn">
+                <ul class="pagelist">
+                    <li class="active"><a href="?page=1">1</a></li>
+                </ul>
+            </div>
+	</div>
+{% endblock %}
